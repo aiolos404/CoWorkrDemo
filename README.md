@@ -1,7 +1,7 @@
-coWorkr Test Project
+coWorkr Test Project Demo
 ============
 
-![Sample Chart](<https://github.com/coWorkr-InSights/codeProject/raw/master/sample.png>)
+![Prototype](<https://github.com/aiolos404/CoWorkrDemo/raw/master/prototype.png>)
 
 ## Project Summary
 
