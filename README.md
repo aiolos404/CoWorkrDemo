@@ -4,6 +4,8 @@ coWorkr Test Project Demo
 ![Prototype](<https://github.com/aiolos404/CoWorkrDemo/raw/master/prototype.png>)
 
 ## Project Summary
+Demo can be accessed through http://54.81.222.159/
+
 
 ### Objective
 Quick test website to show proficiency in Linux, [Meteor](https://www.meteor.com), [MongoDb](https://docs.mongodb.com/manual/), Javascript, [NodeJS](https://nodejs.org), Git and general web/server coding.
