@@ -30,6 +30,38 @@ A quick GCE or AWS server instance running meteor and MongoDb.
 
 * Use GitHub and Git to upload the code to the cloned repository, so we can take a look.  Only document what is not obvious by reading the code.
 
+### Implementation
+mongoDBScript is node.js based application to randomly generate {"date","number"} data in mongoDB
+
+* Implement a random data generator with node.js. The number of data that will be generated is set to 500 by default every time this script is executed.
+
+* The data are inserted into remote mongoDB, which is hosted on AWS instance[3.83.120.144], through plain Mongo NPM driver.
+
+
+codeProject is meteor application that implement the Goals and Outline
+
+* Meteor website is hosted on AWS instance[54.81.222.159] and listening to port 80, on Ubuntu 18 LTS.
+
+* This AWS instance opens all possible ports for experimental purpose.
+
+* The server/main.js pulls the data with connection from imports/api/mongodb.js and publish them to client/main.js
+
+* client/main.js subscribes the data and randomly pick 20 among them, draws 1 scatter chart.js chart and 1 timeseries c3.js chart with picked data on client/main.html
+
+* client/main.js also set a function for button to reload data to update these 2 charts. Every time buton is clicked, another 20 randomly picked data will be used to update charts.
+
+* The data that used to draw charts will always be same, even after the button is clicked.
+
+* client/main.html is designed with [Blaze](http://blazejs.org) template and decorated with [Materialize](http://materializecss.com). Basic [design](https://materializecss.com/templates/starter-template/preview.html ) is referring to demo provided by Materialize
+
+The screenshots are uploded into pics folder for reference
+
+
+### ToDo
+
+* Familiarize coffeescript.
+* Write tests for the application.
+* Add more interesting features, like MQTT support.
 
 ### Extras:
 
