@@ -1,0 +1,26 @@
+{
+  "name": "codeProject",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.6",
+    "c3.js": "^1.0.0",
+    "chart.js": "^2.9.3",
+    "d3": "^5.15.0",
+    "d3.js": "0.0.2-security",
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "^1.0.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
