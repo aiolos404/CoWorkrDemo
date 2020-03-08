@@ -56,6 +56,17 @@ codeProject is meteor application that implement the Goals and Outline
 
 The screenshots are uploded into pics folder for reference
 
+### How To Run?
+mongoDBScript: 
+```	
+node app.js
+```
+
+codeProject: 
+```
+sudo MONGO_URL='mongodb://steve:86563178@3.83.120.144:27017/coworkr' meteor --port 80 --allow-superuser
+```
+
 
 ### ToDo
 
