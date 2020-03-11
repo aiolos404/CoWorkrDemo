@@ -39,8 +39,11 @@ function generateDataForC3JS(ds) {
     var dataNumber = ['number'];
     var data = [];
     for (var i = 0; i < ds.length; i++) {
-        dataDate.push(String(ds[i].date));
-        dataNumber.push(ds[i].number);
+    	if (ds[i].date !== undefined && ds[i].date !== null &&ds[i].number !== undefined && ds[i].number !== null ) {
+			dataDate.push(String(ds[i].date));
+        	dataNumber.push(ds[i].number);
+    	}
+        
     }
     return [dataDate, dataNumber];
 }
@@ -95,12 +98,13 @@ if (Meteor.isClient) {
 	                    datasets: [{
 	                        data: dataset,
 	                        borderColor: '#2196f3', 
-	                        backgroundColor: '#2196f3', 
+	                        backgroundColor: '#2196f3',
 					    	trendlineLinear: {
 						        style: "rgba(0,128,0, .8)",
 						        lineStyle: "dotted|solid",
 						        width: 2
 						    }
+
 	                    }]
 	                },
 	                options: {
@@ -146,7 +150,7 @@ if (Meteor.isClient) {
 	                data: {
 	                    x: 'x',
 	                    xFormat: '%Y%m%d',
-	                    columns: [datasetX, datasetY, ]
+	                    columns: [datasetX, datasetY]
 	                },
 	                axis: {
 	                    x: {
