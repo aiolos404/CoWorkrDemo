@@ -21,6 +21,7 @@ import {
 } from 'meteor/templating';
 import Chart from 'chart.js';
 import c3Chart from './js/c3.js';
+import 'chartjs-plugin-trendline';
 import {
     Tasks
 } from '../imports/api/mongodb.js';
@@ -95,6 +96,11 @@ if (Meteor.isClient) {
 	                        data: dataset,
 	                        borderColor: '#2196f3', 
 	                        backgroundColor: '#2196f3', 
+					    	trendlineLinear: {
+						        style: "rgba(0,128,0, .8)",
+						        lineStyle: "dotted|solid",
+						        width: 2
+						    }
 	                    }]
 	                },
 	                options: {
@@ -122,6 +128,7 @@ if (Meteor.isClient) {
 	                        display: false,
 
 	                    }
+
 	                }
 
 	            });
