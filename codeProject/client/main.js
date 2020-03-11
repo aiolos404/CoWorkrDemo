@@ -22,6 +22,7 @@ import {
 import Chart from 'chart.js';
 import c3Chart from './js/c3.js';
 import 'chartjs-plugin-trendline';
+import 'chartjs-plugin-colorschemes';
 import {
     Tasks
 } from '../imports/api/mongodb.js';
@@ -111,7 +112,8 @@ if (Meteor.isClient) {
 	                    scales: {
 	                        xAxes: [{
 	                            type: 'linear',
-	                            position: 'bottom'
+	                            position: 'bottom',
+	                            gridlines:true
 	                        }],
 	                        yAxes: [{
 	                            display: true,
@@ -121,7 +123,8 @@ if (Meteor.isClient) {
 	                                stepValue: 5,
 	                                min: 0,
 	                                max: 1000
-	                            }
+	                            },
+	                            gridlines:true
 	                        }]
 	                    },
 	                    title: {
@@ -131,7 +134,13 @@ if (Meteor.isClient) {
 	                    legend: {
 	                        display: false,
 
-	                    }
+	                    },
+	                    plugins: {
+				            colorschemes: {
+				                scheme: 'brewer.Spectral11',
+				                override:true
+				            }
+				        }
 
 	                }
 
